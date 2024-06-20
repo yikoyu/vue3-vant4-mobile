@@ -17,7 +17,9 @@ export const useRouteStore = defineStore({
   }),
   getters: {
     getMenus(): RouteRecordRaw[] {
-      return this.menus
+      return this.menus.filter((item) => {
+        return !item.meta?.innerPage
+      })
     },
   },
   actions: {

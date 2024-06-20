@@ -41,19 +41,3 @@ export function doLogout() {
     method: 'POST',
   })
 }
-
-/**
- * @description: 用户修改密码
- */
-export function changePassword(params: any, uid: any) {
-  return http.request(
-    {
-      url: `/user/u${uid}/changepw`,
-      method: 'POST',
-      params,
-    },
-    {
-      isTransformResponse: false,
-    },
-  )
-}

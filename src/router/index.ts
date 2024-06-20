@@ -1,24 +1,17 @@
 import type { App } from 'vue'
-import type { RouteRecordRaw } from 'vue-router'
 import { createRouter, createWebHashHistory } from 'vue-router'
 import { createRouterGuards } from './router-guards'
-import routeModuleList from './modules'
-import { ErrorPageRoute, LoginRoute, RootRoute } from '@/router/base'
+import { basicRoutes, asyncRoutes } from './routes';
 import { useRouteStoreWidthOut } from '@/store/modules/route'
-
-// 菜单
-
-// 普通路由
-export const constantRouter: RouteRecordRaw[] = [LoginRoute, RootRoute, ErrorPageRoute]
 
 const routeStore = useRouteStoreWidthOut()
 
-routeStore.setMenus(routeModuleList)
-routeStore.setRouters(constantRouter.concat(routeModuleList))
+routeStore.setMenus(asyncRoutes)
+routeStore.setRouters(basicRoutes.concat(asyncRoutes))
 
 const router = createRouter({
   history: createWebHashHistory(''),
-  routes: constantRouter.concat(...routeModuleList),
+  routes: basicRoutes.concat(...asyncRoutes),
   strict: true,
   scrollBehavior: () => ({ left: 0, top: 0 }),
 })

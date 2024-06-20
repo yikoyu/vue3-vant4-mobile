@@ -31,7 +31,7 @@
       :center="true"
       :border="false"
       is-link
-      to="/editNickname"
+      to="/my/edit-nickname"
     />
 
     <van-field
@@ -55,7 +55,7 @@
       :center="true"
       :border="false"
       is-link
-      to="/editSign"
+      to="/my/edit-sign"
     />
 
     <van-field
@@ -113,11 +113,13 @@
 
 <script setup lang="ts">
 import { showToast } from 'vant'
-import NavBar from './components/NavBar.vue'
-import UploaderImage from './components/UploaderImage.vue'
+import NavBar from '../components/NavBar.vue'
+import UploaderImage from '../components/UploaderImage.vue'
 import type { FormColumns } from './pickColumns'
 import { genderColumns, industryColumns } from './pickColumns'
 import { useUserStore } from '@/store/modules/user'
+
+defineOptions({ name: 'MyEditUserInfo' })
 
 const userStore = useUserStore()
 const { avatar, gender, industry, cover } = userStore.getUserInfo

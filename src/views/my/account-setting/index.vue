@@ -28,14 +28,15 @@
       :center="true"
       :border="false"
       is-link
-      to="/changePassword"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import NavBar from './components/NavBar.vue'
+import NavBar from '../components/NavBar.vue'
 import { useUserStore } from '@/store/modules/user'
+
+defineOptions({ name: 'MyAccountSetting' })
 
 const userStore = useUserStore()
 const { username, phone } = userStore.getUserInfo

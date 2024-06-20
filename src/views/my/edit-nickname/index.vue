@@ -30,8 +30,10 @@
 <script setup lang="ts">
 import type { FormInstance } from 'vant'
 import { showToast } from 'vant'
-import NavBar from './components/NavBar.vue'
+import NavBar from '../components/NavBar.vue'
 import { useUserStore } from '@/store/modules/user'
+
+defineOptions({ name: 'MyEditNickname' })
 
 const userStore = useUserStore()
 

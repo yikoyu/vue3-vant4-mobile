@@ -20,27 +20,21 @@
       </div>
       <van-divider class="w-full" />
 
-      <van-cell :border="false" title="个人信息" is-link to="/editUserInfo">
+      <van-cell :border="false" title="个人信息" is-link to="/my/edit-user-info">
         <template #icon>
           <i class="i-mingcute:idcard-fill mr-2 text-xl" />
         </template>
       </van-cell>
 
-      <van-cell :border="false" title="账号与安全" is-link to="/accountSetting">
+      <van-cell :border="false" title="账号与安全" is-link to="/my/account-setting">
         <template #icon>
           <i class="i-material-symbols:account-box mr-2 text-xl" />
         </template>
       </van-cell>
 
-      <van-cell :border="false" title="主题设置" is-link to="/themeSetting">
+      <van-cell :border="false" title="主题设置" is-link to="/my/theme-setting">
         <template #icon>
           <i class="i-material-symbols:palette mr-2 text-xl" />
-        </template>
-      </van-cell>
-
-      <van-cell :border="false" title="隐私政策" is-link>
-        <template #icon>
-          <i class="i-material-symbols:list-alt-rounded mr-2 text-xl" />
         </template>
       </van-cell>
 

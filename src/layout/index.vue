@@ -2,6 +2,7 @@
 <template>
   <div class="h-screen flex flex-col">
     <van-nav-bar v-if="getShowHeader" placeholder fixed :title="getTitle" />
+
     <routerView class="flex-1 overflow-x-hidden">
       <template #default="{ Component, route }">
         <!--
@@ -17,7 +18,8 @@
         <component :is="Component" v-else :key="route.fullPath" />
       </template>
     </routerView>
-    <van-tabbar route class="tabbar">
+
+    <van-tabbar v-if="getShowTabbar" route class="tabbar">
       <van-tabbar-item
         v-for="menu in getMenus"
         :key="menu.name"
@@ -48,13 +50,11 @@ const currentRoute = useRoute()
 const getTitle = computed(() => currentRoute.meta.title as string)
 
 // 菜单
-const getMenus: ComputedRef<RouteRecordRaw[]> = computed(() =>
-  routeStore.menus.filter((item) => {
-    return !item.meta?.innerPage
-  }),
-)
+const getMenus: ComputedRef<RouteRecordRaw[]> = computed(() => routeStore.getMenus)
 
 const getShowHeader = computed(() => !currentRoute.meta.hiddenHeader)
+
+const getShowTabbar = computed(() => !currentRoute.meta.innerPage)
 </script>
 
 <style scoped lang="less">
