@@ -9,7 +9,7 @@ export const DASHBOARD_ROUTE :RouteRecordRaw = {
   component: Layout,
   meta: {
     title: '主控台',
-    icon: 'i-simple-icons:atlassian',
+    icon: 'i-mdi:atlassian',
   },
   children: [
     {

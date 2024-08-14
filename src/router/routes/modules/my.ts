@@ -9,7 +9,7 @@ export const MY_ROUTE: RouteRecordRaw = {
   component: Layout,
   meta: {
     title: '我的',
-    icon: 'i-simple-icons:docsify',
+    icon: 'i-mdi:user',
   },
   children: [
     {

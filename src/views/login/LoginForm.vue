@@ -21,7 +21,7 @@
       @click-right-icon="switchPassType = !switchPassType"
     >
       <template #left-icon>
-        <i class="i-iconamoon:lock-bold mr-2 text-lg" />
+        <i class="i-material-symbols:lock-outline mr-2 text-lg" />
       </template>
       <template #right-icon>
         <i v-if="switchPassType" class="i-mdi:eye-outline mr-2 text-lg" />

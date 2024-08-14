@@ -22,7 +22,7 @@
 
       <van-cell :border="false" title="个人信息" is-link to="/my/edit-user-info">
         <template #icon>
-          <i class="i-mingcute:idcard-fill mr-2 text-xl" />
+          <i class="i-mdi:user-card-details mr-2 text-xl" />
         </template>
       </van-cell>
 
@@ -40,7 +40,7 @@
 
       <van-cell :border="false" title="退出登录" is-link @click="showLogoutAction = true">
         <template #icon>
-          <i class="i-solar:logout-3-bold mr-2 text-xl" />
+          <i class="i-ic:outline-logout mr-2 text-xl" />
         </template>
       </van-cell>
 
